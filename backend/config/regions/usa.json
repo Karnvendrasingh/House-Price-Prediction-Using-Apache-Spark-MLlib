@@ -1,0 +1,109 @@
+{
+  "country_code": "USA",
+  "country_name": "United States of America",
+  "region": "California",
+  "currency_code": "USD",
+  "currency_symbol": "$",
+  "dataset_id": "usa_california",
+  "dataset_name": "USA California Housing (Census 1990)",
+  "dataset_source": "StatLib repository / Scikit-learn datasets",
+  "reference_url": "https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset",
+  "target_column": "MedHouseVal",
+  "target_definition": "Median house value for California census block groups",
+  "target_unit": "$100,000 USD",
+  "scale_factor_to_currency": 100000.0,
+  "feature_schema": [
+    {
+      "name": "MedInc",
+      "label": "Median Income",
+      "type": "float",
+      "unit": "$10,000 / year",
+      "description": "Median income in census block group (e.g. 8.325 = $83,250/yr)",
+      "min": 0.4999,
+      "max": 15.0001,
+      "default": 3.8707,
+      "step": 0.1
+    },
+    {
+      "name": "HouseAge",
+      "label": "Median House Age",
+      "type": "float",
+      "unit": "Years",
+      "description": "Median age of houses in block group",
+      "min": 1.0,
+      "max": 52.0,
+      "default": 28.64,
+      "step": 1.0
+    },
+    {
+      "name": "AveRooms",
+      "label": "Average Rooms",
+      "type": "float",
+      "unit": "Rooms / Household",
+      "description": "Average number of rooms per household",
+      "min": 0.846,
+      "max": 141.9,
+      "default": 5.429,
+      "step": 0.1
+    },
+    {
+      "name": "AveBedrms",
+      "label": "Average Bedrooms",
+      "type": "float",
+      "unit": "Bedrooms / Household",
+      "description": "Average number of bedrooms per household",
+      "min": 0.333,
+      "max": 34.066,
+      "default": 1.0966,
+      "step": 0.05
+    },
+    {
+      "name": "Population",
+      "label": "Block Population",
+      "type": "float",
+      "unit": "People",
+      "description": "Total population in block group",
+      "min": 3.0,
+      "max": 35682.0,
+      "default": 1425.47,
+      "step": 10.0
+    },
+    {
+      "name": "AveOccup",
+      "label": "Average Occupants",
+      "type": "float",
+      "unit": "People / Household",
+      "description": "Average number of household members",
+      "min": 0.692,
+      "max": 1243.33,
+      "default": 3.07,
+      "step": 0.1
+    },
+    {
+      "name": "Latitude",
+      "label": "Latitude",
+      "type": "float",
+      "unit": "Degrees North",
+      "description": "Block group centroid latitude",
+      "min": 32.54,
+      "max": 41.95,
+      "default": 35.63,
+      "step": 0.01
+    },
+    {
+      "name": "Longitude",
+      "label": "Longitude",
+      "type": "float",
+      "unit": "Degrees West",
+      "description": "Block group centroid longitude",
+      "min": -124.35,
+      "max": -114.31,
+      "default": -119.57,
+      "step": 0.01
+    }
+  ],
+  "model_id": "usa_california_lr",
+  "support_status": "ACTIVE",
+  "compatibility_notes": "Trained on census block group aggregates. Represents district median housing value estimates, not individual home valuations."
+}
+

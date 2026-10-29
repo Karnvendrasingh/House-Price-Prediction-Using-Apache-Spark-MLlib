@@ -1,0 +1,45 @@
+{
+  "country_code": "GBR",
+  "country_name": "United Kingdom",
+  "region": "England & Wales",
+  "currency_code": "GBP",
+  "currency_symbol": "£",
+  "dataset_id": "uk_land_registry",
+  "dataset_name": "HM Land Registry Price Paid Data",
+  "dataset_source": "UK Government Open Data",
+  "reference_url": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads",
+  "target_column": "Price",
+  "target_definition": "Full market value paid for residential property",
+  "target_unit": "GBP (£)",
+  "scale_factor_to_currency": 1.0,
+  "feature_schema": [
+    {
+      "name": "PropertyType",
+      "label": "Property Type",
+      "type": "categorical",
+      "description": "Detached, Semi-Detached, Terraced, Flat/Maisonette"
+    },
+    {
+      "name": "OldNew",
+      "label": "Build Status",
+      "type": "categorical",
+      "description": "New build (Y) or established residential (N)"
+    },
+    {
+      "name": "Duration",
+      "label": "Tenure Duration",
+      "type": "categorical",
+      "description": "Freehold (F) or Leasehold (L)"
+    },
+    {
+      "name": "PostcodeDistrict",
+      "label": "Postcode District",
+      "type": "categorical",
+      "description": "Outward postal code district (e.g. SW1A, M1)"
+    }
+  ],
+  "model_id": "uk_land_registry_gbt",
+  "support_status": "PLANNED_FUTURE",
+  "compatibility_notes": "Requires transactional Land Registry ingestion and regional categorical embeddings. Prediction is currently disabled until training dataset is connected."
+}
+

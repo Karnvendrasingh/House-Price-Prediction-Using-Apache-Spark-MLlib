@@ -1,0 +1,61 @@
+{
+  "model_id": "usa_california_lr",
+  "name": "California Housing MLlib Linear Regression",
+  "version": "1.0.0",
+  "framework": "Apache Spark MLlib (pyspark.ml)",
+  "algorithm": "LinearRegression",
+  "region_code": "USA",
+  "dataset_id": "usa_california",
+  "pipeline_stages": [
+    {
+      "stage_name": "VectorAssembler",
+      "input_cols": [
+        "MedInc",
+        "HouseAge",
+        "AveRooms",
+        "AveBedrms",
+        "Population",
+        "AveOccup",
+        "Latitude",
+        "Longitude"
+      ],
+      "output_col": "raw_features"
+    },
+    {
+      "stage_name": "StandardScaler",
+      "input_col": "raw_features",
+      "output_col": "features",
+      "with_mean": true,
+      "with_std": true
+    },
+    {
+      "stage_name": "LinearRegression",
+      "features_col": "features",
+      "label_col": "MedHouseVal",
+      "prediction_col": "prediction",
+      "hyperparameters": {
+        "regParam": 0.0,
+        "elasticNetParam": 0.0,
+        "maxIter": 100,
+        "standardization": false
+      }
+    }
+  ],
+  "train_test_split": {
+    "train_ratio": 0.8,
+    "test_ratio": 0.2,
+    "seed": 42
+  },
+  "metrics": {
+    "rmse": null,
+    "mae": null,
+    "r2": null,
+    "train_samples": null,
+    "test_samples": null,
+    "coefficients": null,
+    "intercept": null
+  },
+  "status": "UNINITIALIZED",
+  "last_trained_at": null
+}
+

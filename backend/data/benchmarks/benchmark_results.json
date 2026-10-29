@@ -1,0 +1,126 @@
+[
+  {
+    "benchmark_id": "bench_1793094110",
+    "timestamp": "2026-10-27T09:41:50Z",
+    "execution_environment": {
+      "master": "local[*]",
+      "spark_version": "3.5.3",
+      "driver_memory": "2g",
+      "configured_partitions": 8,
+      "cluster_type": "Single-Node Local[*] Simulated Cluster (INT315 Laboratory Environment)",
+      "hardware_note": "Local CPU cores simulated execution. Real multi-node cluster scaling requires physical Spark worker daemons."
+    },
+    "dataset": {
+      "name": "California Housing (StatLib)",
+      "is_synthetic": false,
+      "total_source_records": 20640
+    },
+    "runs": [
+      {
+        "fraction": 0.25,
+        "percentage_label": "25%",
+        "row_count": 5171,
+        "train_row_count": 4137,
+        "test_row_count": 1034,
+        "partition_count": 8,
+        "preprocessing_duration_s": 3.1939,
+        "training_duration_s": 2.8026,
+        "prediction_duration_s": 1.5569,
+        "total_duration_s": 7.5534,
+        "inference_throughput_rps": 664.1,
+        "scaling_linearity": 1.0
+      },
+      {
+        "fraction": 0.5,
+        "percentage_label": "50%",
+        "row_count": 10436,
+        "train_row_count": 8399,
+        "test_row_count": 2037,
+        "partition_count": 8,
+        "preprocessing_duration_s": 0.8313,
+        "training_duration_s": 1.6838,
+        "prediction_duration_s": 0.7548,
+        "total_duration_s": 3.2699,
+        "inference_throughput_rps": 2698.9,
+        "scaling_linearity": 0.215
+      },
+      {
+        "fraction": 1.0,
+        "percentage_label": "100%",
+        "row_count": 20640,
+        "train_row_count": 16628,
+        "test_row_count": 4012,
+        "partition_count": 8,
+        "preprocessing_duration_s": 1.8322,
+        "training_duration_s": 0.7872,
+        "prediction_duration_s": 0.4082,
+        "total_duration_s": 3.0275,
+        "inference_throughput_rps": 9829.6,
+        "scaling_linearity": 0.1
+      }
+    ],
+    "total_suite_duration_s": 19.693
+  },
+  {
+    "benchmark_id": "bench_1793091853",
+    "timestamp": "2026-10-27T09:04:13Z",
+    "execution_environment": {
+      "master": "local[*]",
+      "spark_version": "3.5.3",
+      "driver_memory": "2g",
+      "configured_partitions": 4,
+      "cluster_type": "Single-Node Local[*] Simulated Cluster (INT315 Laboratory Environment)",
+      "hardware_note": "Local CPU cores simulated execution. Real multi-node cluster scaling requires physical Spark worker daemons."
+    },
+    "dataset": {
+      "name": "California Housing (StatLib)",
+      "is_synthetic": false,
+      "total_source_records": 20640
+    },
+    "runs": [
+      {
+        "fraction": 0.25,
+        "percentage_label": "25%",
+        "row_count": 5301,
+        "train_row_count": 4275,
+        "test_row_count": 1026,
+        "partition_count": 4,
+        "preprocessing_duration_s": 3.2557,
+        "training_duration_s": 1.4672,
+        "prediction_duration_s": 0.3422,
+        "total_duration_s": 5.0651,
+        "inference_throughput_rps": 2998.4,
+        "scaling_linearity": 1.0
+      },
+      {
+        "fraction": 0.5,
+        "percentage_label": "50%",
+        "row_count": 10479,
+        "train_row_count": 8479,
+        "test_row_count": 2000,
+        "partition_count": 4,
+        "preprocessing_duration_s": 0.5881,
+        "training_duration_s": 0.3603,
+        "prediction_duration_s": 0.2805,
+        "total_duration_s": 1.2289,
+        "inference_throughput_rps": 7130.7,
+        "scaling_linearity": 0.123
+      },
+      {
+        "fraction": 1.0,
+        "percentage_label": "100%",
+        "row_count": 20640,
+        "train_row_count": 16603,
+        "test_row_count": 4037,
+        "partition_count": 4,
+        "preprocessing_duration_s": 0.4539,
+        "training_duration_s": 0.2929,
+        "prediction_duration_s": 0.1944,
+        "total_duration_s": 0.9412,
+        "inference_throughput_rps": 20766.9,
+        "scaling_linearity": 0.048
+      }
+    ],
+    "total_suite_duration_s": 22.53
+  }
+]

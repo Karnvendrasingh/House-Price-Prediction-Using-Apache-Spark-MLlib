@@ -1,0 +1,244 @@
+{
+  "dataset_name": "USA California Housing (Census 1990)",
+  "source": "StatLib repository / Scikit-learn datasets",
+  "reference_url": "https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset",
+  "region": "California, United States",
+  "currency": "USD",
+  "target_column": "MedHouseVal",
+  "target_unit": "$100,000 USD",
+  "total_records": 20640,
+  "total_features": 8,
+  "feature_names": [
+    "MedInc",
+    "HouseAge",
+    "AveRooms",
+    "AveBedrms",
+    "Population",
+    "AveOccup",
+    "Latitude",
+    "Longitude"
+  ],
+  "feature_descriptions": {
+    "MedInc": "Median income in block group (tens of thousands of USD)",
+    "HouseAge": "Median house age in block group (years)",
+    "AveRooms": "Average number of rooms per household",
+    "AveBedrms": "Average number of bedrooms per household",
+    "Population": "Block group population",
+    "AveOccup": "Average number of household members",
+    "Latitude": "Block group centroid latitude (degrees north)",
+    "Longitude": "Block group centroid longitude (degrees west)",
+    "MedHouseVal": "Median house value for California districts ($100,000s)"
+  },
+  "statistics": {
+    "MedInc": {
+      "count": 20640,
+      "mean": 3.8707,
+      "std": 1.8998,
+      "min": 0.4999,
+      "p25": 2.5634,
+      "p50_median": 3.5348,
+      "p75": 4.7432,
+      "max": 15.0001,
+      "missing": 0
+    },
+    "HouseAge": {
+      "count": 20640,
+      "mean": 28.6395,
+      "std": 12.5856,
+      "min": 1.0,
+      "p25": 18.0,
+      "p50_median": 29.0,
+      "p75": 37.0,
+      "max": 52.0,
+      "missing": 0
+    },
+    "AveRooms": {
+      "count": 20640,
+      "mean": 5.429,
+      "std": 2.4742,
+      "min": 0.8462,
+      "p25": 4.4407,
+      "p50_median": 5.2291,
+      "p75": 6.0524,
+      "max": 141.9091,
+      "missing": 0
+    },
+    "AveBedrms": {
+      "count": 20640,
+      "mean": 1.0967,
+      "std": 0.4739,
+      "min": 0.3333,
+      "p25": 1.0061,
+      "p50_median": 1.0488,
+      "p75": 1.0995,
+      "max": 34.0667,
+      "missing": 0
+    },
+    "Population": {
+      "count": 20640,
+      "mean": 1425.4767,
+      "std": 1132.4621,
+      "min": 3.0,
+      "p25": 787.0,
+      "p50_median": 1166.0,
+      "p75": 1725.0,
+      "max": 35682.0,
+      "missing": 0
+    },
+    "AveOccup": {
+      "count": 20640,
+      "mean": 3.0707,
+      "std": 10.386,
+      "min": 0.6923,
+      "p25": 2.4297,
+      "p50_median": 2.8181,
+      "p75": 3.2823,
+      "max": 1243.3333,
+      "missing": 0
+    },
+    "Latitude": {
+      "count": 20640,
+      "mean": 35.6319,
+      "std": 2.136,
+      "min": 32.54,
+      "p25": 33.93,
+      "p50_median": 34.26,
+      "p75": 37.71,
+      "max": 41.95,
+      "missing": 0
+    },
+    "Longitude": {
+      "count": 20640,
+      "mean": -119.5697,
+      "std": 2.0035,
+      "min": -124.35,
+      "p25": -121.8,
+      "p50_median": -118.49,
+      "p75": -118.01,
+      "max": -114.31,
+      "missing": 0
+    },
+    "MedHouseVal": {
+      "count": 20640,
+      "mean": 2.0686,
+      "std": 1.154,
+      "min": 0.15,
+      "p25": 1.196,
+      "p50_median": 1.797,
+      "p75": 2.6472,
+      "max": 5.0,
+      "missing": 0
+    }
+  },
+  "correlation_with_target": {
+    "MedInc": 0.6881,
+    "HouseAge": 0.1056,
+    "AveRooms": 0.1519,
+    "AveBedrms": -0.0467,
+    "Population": -0.0246,
+    "AveOccup": -0.0237,
+    "Latitude": -0.1442,
+    "Longitude": -0.046
+  },
+  "full_correlation_matrix": {
+    "MedInc": {
+      "MedInc": 1.0,
+      "HouseAge": -0.119,
+      "AveRooms": 0.3269,
+      "AveBedrms": -0.062,
+      "Population": 0.0048,
+      "AveOccup": 0.0188,
+      "Latitude": -0.0798,
+      "Longitude": -0.0152,
+      "MedHouseVal": 0.6881
+    },
+    "HouseAge": {
+      "MedInc": -0.119,
+      "HouseAge": 1.0,
+      "AveRooms": -0.1533,
+      "AveBedrms": -0.0777,
+      "Population": -0.2962,
+      "AveOccup": 0.0132,
+      "Latitude": 0.0112,
+      "Longitude": -0.1082,
+      "MedHouseVal": 0.1056
+    },
+    "AveRooms": {
+      "MedInc": 0.3269,
+      "HouseAge": -0.1533,
+      "AveRooms": 1.0,
+      "AveBedrms": 0.8476,
+      "Population": -0.0722,
+      "AveOccup": -0.0049,
+      "Latitude": 0.1064,
+      "Longitude": -0.0275,
+      "MedHouseVal": 0.1519
+    },
+    "AveBedrms": {
+      "MedInc": -0.062,
+      "HouseAge": -0.0777,
+      "AveRooms": 0.8476,
+      "AveBedrms": 1.0,
+      "Population": -0.0662,
+      "AveOccup": -0.0062,
+      "Latitude": 0.0697,
+      "Longitude": 0.0133,
+      "MedHouseVal": -0.0467
+    },
+    "Population": {
+      "MedInc": 0.0048,
+      "HouseAge": -0.2962,
+      "AveRooms": -0.0722,
+      "AveBedrms": -0.0662,
+      "Population": 1.0,
+      "AveOccup": 0.0699,
+      "Latitude": -0.1088,
+      "Longitude": 0.0998,
+      "MedHouseVal": -0.0246
+    },
+    "AveOccup": {
+      "MedInc": 0.0188,
+      "HouseAge": 0.0132,
+      "AveRooms": -0.0049,
+      "AveBedrms": -0.0062,
+      "Population": 0.0699,
+      "AveOccup": 1.0,
+      "Latitude": 0.0024,
+      "Longitude": 0.0025,
+      "MedHouseVal": -0.0237
+    },
+    "Latitude": {
+      "MedInc": -0.0798,
+      "HouseAge": 0.0112,
+      "AveRooms": 0.1064,
+      "AveBedrms": 0.0697,
+      "Population": -0.1088,
+      "AveOccup": 0.0024,
+      "Latitude": 1.0,
+      "Longitude": -0.9247,
+      "MedHouseVal": -0.1442
+    },
+    "Longitude": {
+      "MedInc": -0.0152,
+      "HouseAge": -0.1082,
+      "AveRooms": -0.0275,
+      "AveBedrms": 0.0133,
+      "Population": 0.0998,
+      "AveOccup": 0.0025,
+      "Latitude": -0.9247,
+      "Longitude": 1.0,
+      "MedHouseVal": -0.046
+    },
+    "MedHouseVal": {
+      "MedInc": 0.6881,
+      "HouseAge": 0.1056,
+      "AveRooms": 0.1519,
+      "AveBedrms": -0.0467,
+      "Population": -0.0246,
+      "AveOccup": -0.0237,
+      "Latitude": -0.1442,
+      "Longitude": -0.046,
+      "MedHouseVal": 1.0
+    }
+  }
+}

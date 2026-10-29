@@ -1,0 +1,788 @@
+=== PAGE 1 ===
+ 
+ 
+ 
+DATA SCIENCE MINOR PROJECT REPORT 
+ 
+ 
+PROJECT TITLE: Predictive Analysis of Online Shoppers’ 
+Purchasing Behaviour Using Machine Learning 
+ 
+Name: KARNVENDRA SINGH 
+Roll Number: 04 
+Registration Number: 12319454 
+Programme and Section: B. Tech CSE K23DF 
+Course Code: INT234 
+Submitted To: Dr. Karan Bajaj 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+=== PAGE 2 ===
+DECLARATION 
+ 
+I, Karnvendra Singh, student of B. Tech under the School of Computer Science and 
+Engineering, Lovely Professional University, Punjab, hereby declare that all the information 
+furnished in this project report is based on my own intensive work and is genuine. 
+ 
+ 
+ 
+ 
+Date: 15/12/2025                                                                                                 Signature: 
+Registration No: 12319454                                                                Name: Karnvendra Singh 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 3 ===
+CERTIFICATE 
+This is to certify that Karnvendra Singh, bearing Registration No. 12319454, has successfully 
+completed the project titled “Predictive Analysis of Online Shoppers’ Purchasing Behaviour 
+Using Machine Learning” under my guidance and supervision. To the best of my knowledge, 
+the present work is the result of his original effort, development, and study, and has not been 
+submitted elsewhere for the award of any degree or certification. 
+Signature and Name of the Supervisor 
+Designation 
+School of Computer Science and Engineering 
+Lovely Professional University, Phagwara, Punjab 
+ 
+Date:15 December 2025 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 4 ===
+ 
+ACKNOWLEDGEMENT 
+ 
+I would like to express my sincere gratitude to my faculty coordinator, Dr. Karan Bajaj 
+(32130), for his constant encouragement, support, and insightful feedback throughout the 
+duration of this project. I would also like to extend my thanks to Lovely Professional 
+University for providing the infrastructure, access to academic databases, and an 
+intellectually stimulating environment that made this work possible. My heartfelt 
+appreciation also goes to my peers for their valuable suggestions, and to my family for their 
+unwavering motivation and emotional support. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 5 ===
+TABLE OF CONTENTS 
+1. Introduction 
+1.1 Overview of Predictive Analytics 
+1.2 Importance of Prediction in E-Commerce Domain 
+1.3 Problem Statement 
+1.4 Objectives of the Study 
+1.5 Scope of the Project 
+2. Source of Dataset 
+2.1 Name of the Dataset 
+2.2 Source and Dataset Link 
+2.3 Description of Attributes 
+2.4 Dataset Size (Rows and Columns) 
+2.5 Type of Prediction 
+3. Dataset Preprocessing 
+3.1 Data Understanding and Inspection 
+3.2 Handling Categorical Variables 
+3.3 Encoding of Boolean and Categorical Features 
+3.4 Missing Value Analysis 
+3.5 Feature Scaling 
+3.6 Separation of Dependent and Independent Variables 
+3.7 Train–Test Data Preparation 
+4. Analysis on Dataset (Objective-Wise) 
+4.1 Objective 1: Analysis of User Browsing Behavior 
+4.2 Objective 2: Engagement Metrics and Purchase Intent 
+4.3 Objective 3: Temporal and Special Day Impact Analysis 
+4.4 Objective 4: Technical and Traffic Source Analysis 
+5. Model Development 
+5.1 Logistic Regression Model 
+5.2 K-Nearest Neighbors (KNN) Model 
+5.3 Decision Tree Classifier 
+6. Model Comparison 
+7. Best Model Identification 
+8. Conclusion 
+9. Future Scope 
+10. References 
+ 
+ 
+
+=== PAGE 6 ===
+Introduction 
+1.1 Overview of Predictive Analytics 
+Predictive analytics is a branch of data analytics that uses historical data, statistical 
+techniques, and machine learning algorithms to identify patterns and predict future outcomes. 
+It plays a crucial role in decision-making by enabling organizations to anticipate customer 
+behavior, optimize resources, and improve business performance. 
+1.2 Importance of Prediction in the Selected Domain 
+In the e-commerce domain, predicting whether a visitor will make a purchase is extremely 
+valuable. Accurate prediction helps businesses: 
+• Improve conversion rates 
+• Personalize user experiences 
+• Optimize marketing strategies 
+• Reduce customer acquisition costs 
+Understanding online shopping behavior allows companies to target potential buyers more 
+effectively and increase overall revenue. 
+1.3 Problem Statement 
+Despite high website traffic, a large percentage of online visitors leave without completing a 
+purchase. Identifying the factors that influence purchasing decisions and predicting buyer 
+intent remains a challenge. This project aims to analyze user browsing behavior and develop 
+predictive models to determine whether a visitor is likely to generate revenue. 
+1.4 Objectives of the Study 
+• To analyze customer browsing behavior on an e-commerce website 
+• To identify key factors influencing purchase decisions 
+• To preprocess and analyze the dataset for meaningful insights 
+• To build predictive models to classify purchasing intent 
+• To compare model performances and identify the best model 
+1.5 Scope of the Project 
+The scope of this project includes exploratory data analysis, feature preprocessing, predictive 
+model development, and performance evaluation using machine learning techniques. The 
+study focuses only on historical browsing session data and does not include real-time 
+prediction. 
+ 
+
+=== PAGE 7 ===
+Source of Dataset 
+2.1 Name of Dataset 
+Online Shoppers Purchasing Intention Dataset 
+2.2 Source Link 
+UCI Machine Learning Repository 
+https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset 
+2.3 Description of Attributes 
+The dataset contains user session-level information collected from an online shopping 
+website. Major attributes include: 
+• Administrative / Informational / ProductRelated: Number of pages visited 
+• Administrative_Duration / Informational_Duration / ProductRelated_Duration: 
+Time spent on pages 
+• BounceRates & ExitRates: User engagement metrics 
+• PageValues: Average value of visited pages 
+• SpecialDay: Proximity to special shopping days 
+• Month: Month of the visit 
+• OperatingSystems, Browser, Region, TrafficType: Technical and geographical 
+details 
+• VisitorType: New or Returning visitor 
+• Weekend: Weekend or weekday visit 
+• Revenue: Target variable (TRUE/FALSE) 
+2.4 Number of Rows and Columns 
+• Rows: 12,330 
+• Columns: 18 
+2.5 Type of Prediction 
+• Binary Classification 
+• Target Variable: Revenue (TRUE / FALSE) 
+ 
+ 
+ 
+
+=== PAGE 8 ===
+Dataset Preprocessing 
+Dataset preprocessing is a critical phase in predictive analytics as it directly impacts the 
+accuracy, reliability, and interpretability of machine learning models. Raw data collected 
+from real-world systems often contains inconsistencies, mixed data types, and features that 
+are not directly suitable for model training. Therefore, systematic preprocessing was 
+performed on the Online Shoppers Purchasing Intention Dataset to transform it into a clean, 
+structured, and machine-learning-ready format. 
+3.1 Data Understanding and Initial Inspection 
+The dataset consists of session-level browsing data collected from an e-commerce website. 
+Each row represents a unique user session, and the columns capture behavioral, technical, and 
+temporal attributes. The target variable, Revenue, indicates whether a particular session 
+resulted in a purchase. 
+Initial inspection involved: 
+• Verifying column names and data types 
+• Understanding numerical and categorical features 
+• Identifying the dependent and independent variables 
+• Checking for inconsistencies or anomalies in values 
+This step ensured clarity about feature roles before applying transformations. 
+3.2 Handling Categorical Variables 
+Several attributes in the dataset are categorical in nature and cannot be directly processed by 
+most machine learning algorithms. The major categorical variables include: 
+• Month – Represents the month of the session (e.g., Feb, Mar, Nov) 
+• VisitorType – Indicates whether the user is a Returning Visitor, New Visitor, or Other 
+• Weekend – Boolean attribute indicating weekend or weekday visit 
+• Revenue – Target variable indicating purchase outcome 
+These variables were handled carefully to preserve their semantic meaning while making 
+them suitable for predictive modeling. 
+Month Encoding 
+The Month variable is a nominal categorical feature. Since months do not have a strict 
+numerical order in the context of purchase behavior, they were encoded using label encoding 
+or one-hot encoding depending on the model requirement. This allowed models to learn 
+month-specific patterns in purchasing behavior. 
+ 
+
+=== PAGE 9 ===
+VisitorType Encoding 
+The VisitorType feature was converted into numerical form to distinguish between returning 
+and new visitors. Returning visitors typically show higher conversion probability, making this 
+feature important for prediction. 
+3.3 Encoding Boolean and Categorical Features 
+Boolean attributes such as Weekend and Revenue were originally represented as TRUE and 
+F ALSE. These values were converted into binary numerical format: 
+• TRUE → 1 
+• FALSE → 0 
+This conversion is essential because machine learning algorithms operate on numerical data 
+and cannot interpret Boolean or string values directly. 
+For categorical attributes with multiple categories, encoding techniques ensured: 
+• No loss of information 
+• No introduction of artificial ordering 
+• Compatibility with different algorithms 
+This step enabled seamless integration of categorical variables into model training. 
+3.4 Missing Value Analysis 
+Handling missing values is a crucial preprocessing step, as incomplete data can negatively 
+affect model performance and lead to biased predictions. 
+A detailed missing value check was performed across all attributes: 
+• Numerical features were inspected for null or undefined values 
+• Categorical features were verified for empty or invalid entries 
+The analysis revealed that the dataset is largely clean, with no significant missing values. 
+This indicates high data quality and reduces the need for aggressive imputation techniques. 
+Since missing values were negligible, no records were removed, preserving the integrity and 
+size of the dataset. 
+3.5 Feature Scaling 
+Feature scaling is essential for algorithms that rely on distance calculations, such as K-
+Nearest Neighbors (KNN) and Logistic Regression. 
+The dataset contains features with varying ranges: 
+• Duration attributes can range from 0 to several thousand seconds 
+• BounceRates and ExitRates range between 0 and 1 
+
+=== PAGE 10 ===
+• PageValues can have high variance 
+To ensure that no single feature dominates the model due to scale differences, feature scaling 
+was applied using standardization techniques. This process transformed all numerical features 
+to a common scale while maintaining their relative distributions. 
+Feature scaling resulted in: 
+• Improved convergence of models 
+• Enhanced accuracy for distance-based classifiers 
+• Fair contribution of all numerical attributes 
+3.6 Feature Selection and Separation 
+After cleaning and encoding, the dataset was divided into: 
+• Independent Variables (X): All behavioral, technical, and temporal features 
+• Dependent Variable (Y): Revenue 
+The Revenue column was isolated as the target variable, while the remaining columns were 
+treated as predictors. This clear separation is necessary for supervised learning models to 
+learn the relationship between input features and output labels. 
+3.7 Train–Test Split Preparation 
+Before model training, the dataset was prepared for evaluation by splitting it into training and 
+testing subsets: 
+• 70% Training Data – Used for model learning 
+• 30% Testing Data – Used for unbiased performance evaluation 
+This ensured that the predictive models were tested on unseen data, providing a realistic 
+measure of their generalization capability. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 11 ===
+4. Analysis on Dataset (Objective-wise) 
+The objective-wise analysis focuses on understanding user behavior, engagement patterns, 
+temporal effects, and technical attributes influencing online purchasing decisions. Each 
+objective is aligned with business relevance and predictive modeling requirements. 
+4.1 Objective 1: Analyze Customer Browsing Behavior and Engagement 
+General Description 
+This objective aims to understand how users interact with different types of web pages during 
+their browsing sessions. It focuses on analyzing the number of pages visited and the time 
+spent on administrative, informational, and product-related pages. 
+Specific Requirements 
+• Analyze Administrative, Informational, and ProductRelated page visits 
+• Evaluate corresponding duration metrics 
+• Identify which type of page contributes most to purchase intent 
+Analysis Results 
+The analysis reveals that: 
+• Product-related pages dominate user interaction compared to administrative and 
+informational pages 
+• Sessions with higher ProductRelated and ProductRelated_Duration values show a 
+stronger association with revenue generation 
+• Administrative and informational pages play a supportive role but are less decisive in 
+final purchase decisions 
+This indicates that customers spend most of their decision-making time exploring product 
+details before completing a purchase. 
+Visualization 
+• Bar chart: Average number of page visits by page type 
+• Box plot: ProductRelated duration vs Revenue 
+4.2 Objective 2: Evaluate the Impact of Engagement Metrics on Purchase Intention 
+General Description 
+This objective examines how engagement-related metrics influence purchasing decisions, 
+particularly focusing on user exit behavior. 
+Specific Requirements 
+• Analyze BounceRates and ExitRates 
+
+=== PAGE 12 ===
+• Compare engagement metrics between purchasing and non-purchasing sessions 
+Analysis Results 
+Key findings include: 
+• Revenue-generating sessions generally have lower bounce rates and exit rates 
+• High bounce rates strongly correlate with session abandonment 
+• Users who stay longer and navigate multiple pages are more likely to make purchases 
+These results confirm that stronger engagement significantly increases conversion 
+probability. 
+Visualization 
+• Box plot: BounceRates vs Revenue 
+• Histogram: ExitRates distribution 
+4.3 Objective 3: Analyze the Influence of Page Value on Revenue Generation 
+General Description 
+PageValues represent the estimated contribution of specific pages toward conversion. This 
+objective analyzes how PageValues influence purchase outcomes. 
+Specific Requirements 
+• Study PageValues distribution 
+• Compare PageValues across purchasing and non-purchasing sessions 
+Analysis Results 
+The analysis shows: 
+• Sessions with non-zero PageValues have a significantly higher probability of 
+generating revenue 
+• PageValues emerge as one of the strongest predictors of purchase intent 
+• Higher PageValues indicate effective navigation paths leading to conversion 
+This demonstrates the importance of optimizing high-value pages within the website. 
+Visualization 
+• Box plot: PageValues vs Revenue 
+• Density plot: PageValues distribution 
+4.4 Objective 4: Study the Effect of Special Days and Seasonal Trends 
+General Description 
+
+=== PAGE 13 ===
+This objective evaluates how temporal factors such as special shopping days and monthly 
+trends affect customer purchasing behavior. 
+Specific Requirements 
+• Analyze the SpecialDay feature 
+• Compare revenue patterns across different months 
+Analysis Results 
+Key insights include: 
+• Purchase likelihood increases as sessions occur closer to special days 
+• Certain months show higher conversion rates due to seasonal demand and 
+promotional campaigns 
+• SpecialDay acts as a psychological trigger encouraging purchases 
+This highlights the importance of seasonal marketing strategies. 
+Visualization 
+• Line chart: SpecialDay vs Revenue probability 
+• Bar chart: Month-wise revenue distribution 
+4.5 Objective 5: Analyze Visitor Type Behavior and Conversion Patterns 
+General Description 
+This objective compares the behavior of different visitor types to understand their 
+contribution to revenue. 
+Specific Requirements 
+• Compare Returning Visitor and New Visitor sessions 
+• Analyze conversion rates across visitor types 
+Analysis Results 
+The analysis indicates: 
+• Returning visitors have significantly higher conversion rates 
+• New visitors exhibit higher bounce rates and lower engagement 
+• Familiarity with the website increases trust and purchase likelihood 
+This suggests that customer retention strategies are critical for increasing revenue. 
+Visualization 
+• Bar chart: VisitorType vs Revenue 
+
+=== PAGE 14 ===
+• Stacked column chart: VisitorType conversion rates 
+4.6 Objective 6: Analyze the Impact of Technical Factors on Purchasing Behavior 
+General Description 
+This objective examines whether technical attributes such as operating system, browser, 
+region, and traffic source influence purchase decisions. 
+Specific Requirements 
+• Analyze OperatingSystems, Browser, Region, and TrafficType 
+• Compare conversion rates across categories 
+Analysis Results 
+Findings reveal: 
+• TrafficType shows noticeable variation in conversion performance 
+• Browser and OperatingSystem have minimal but observable impact 
+• Region-based differences exist but are not dominant predictors 
+This indicates that while technical factors matter, behavioral features are more influential. 
+Visualization 
+• Bar chart: TrafficType vs Revenue 
+• Clustered bar chart: Browser vs Revenue 
+4.7 Objective 7: Weekend vs Weekday Purchase Behavior Analysis 
+General Description 
+This objective studies the effect of user visit timing on purchase decisions. 
+Specific Requirements 
+• Compare revenue generation on weekends and weekdays 
+Analysis Results 
+The analysis shows: 
+• Weekend sessions exhibit slightly higher engagement and purchase rates 
+• Users have more time to browse and explore products during weekends 
+• Weekend visits contribute positively to overall revenue 
+Visualization 
+• Bar chart: Weekend vs Revenue 
+
+=== PAGE 15 ===
+5. Model Development 
+Model development is a crucial stage in predictive analytics where suitable machine learning 
+algorithms are trained to learn patterns from historical data and make accurate predictions. In 
+this project, three widely used classification models were implemented to predict whether an 
+online shopping session would result in revenue generation. 
+The dataset was divided into 70% training data and 30% testing data. The training set was 
+used to build the models, while the testing set was used to evaluate their performance on 
+unseen data, ensuring unbiased and reliable results. 
+ 
+5.1 Logistic Regression 
+Logistic Regression was used as the baseline classification model. It is a statistical technique 
+that estimates the probability of a binary outcome based on a linear combination of input 
+features. 
+This model is: 
+• Simple and computationally efficient 
+• Easy to interpret using coefficients 
+• Effective for understanding feature influence on purchasing intent 
+Logistic Regression provided a strong benchmark against which more complex models could 
+be compared. 
+ 
+5.2 K-Nearest Neighbors (KNN) 
+K-Nearest Neighbors is a distance-based classification algorithm that predicts the class of a 
+data point based on the majority class of its nearest neighbors. 
+Key characteristics: 
+• Relies on feature similarity and distance metrics 
+• Highly sensitive to feature scaling 
+• Does not require explicit model training 
+KNN captured local patterns in customer behavior but required careful preprocessing to 
+ensure accurate distance calculations. 
+ 
+ 
+ 
+
+=== PAGE 16 ===
+5.3 Decision Tree Classifier 
+The Decision Tree Classifier is a non-linear model that splits data into subsets based on 
+feature conditions, forming a tree-like structure. 
+Advantages include: 
+• Ability to model complex and non-linear relationships 
+• High interpretability through decision rules 
+• Minimal preprocessing requirements 
+This model effectively identified important decision paths leading to purchase or non-
+purchase outcomes. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 17 ===
+6. Model Comparison 
+Model comparison is a crucial step in predictive analytics as it helps identify the most 
+suitable machine learning algorithm for the given problem. Since different models have 
+different learning mechanisms, assumptions, and strengths, evaluating them using consistent 
+performance metrics ensures objective and reliable selection of the best-performing model. 
+In this project, three classification models—Logistic Regression, K-Nearest Neighbors 
+(KNN), and Decision Tree Classifier—were compared to predict online shoppers’ 
+purchasing intention. All models were trained using the same preprocessed dataset and 
+evaluated on the same testing set to maintain fairness in comparison. 
+ 
+6.1 Evaluation Metrics Used 
+To compare model performance effectively, the following standard classification metrics 
+were used: 
+• Accuracy: Measures the overall correctness of the model 
+• Precision: Indicates how many predicted purchases were actually purchases 
+• Recall: Measures the model’s ability to correctly identify actual purchasers 
+• F1-Score: Harmonic mean of precision and recall, useful for imbalanced datasets 
+These metrics provide a balanced view of performance, especially since the dataset contains 
+more non-purchasing sessions than purchasing ones. 
+ 
+6.2 Logistic Regression Performance 
+Logistic Regression served as the baseline model for comparison. 
+Observations: 
+• Delivered stable and consistent performance 
+• Provided good interpretability through coefficients 
+• Worked well with linearly separable features 
+Strengths: 
+• Fast training time 
+• Easy to interpret results 
+• Performs well when relationships are approximately linear 
+Limitations: 
+
+=== PAGE 18 ===
+• Unable to capture complex non-linear patterns 
+• Performance slightly lower compared to advanced models 
+Logistic Regression demonstrated moderate accuracy and balanced precision–recall values, 
+making it a reliable but basic classifier for purchasing intent prediction. 
+ 
+6.3 K-Nearest Neighbors (KNN) Performance 
+KNN is a distance-based, non-parametric algorithm that classifies data points based on 
+similarity to neighboring points. 
+Observations: 
+• Performance improved significantly after feature scaling 
+• Captured local patterns in user behavior 
+• Achieved higher recall compared to Logistic Regression 
+Strengths: 
+• No assumptions about data distribution 
+• Effective in capturing complex decision boundaries 
+Limitations: 
+• Computationally expensive for large datasets 
+• Sensitive to noisy data and irrelevant features 
+• Performance heavily depends on the choice of k 
+KNN performed better than Logistic Regression in identifying purchasing sessions but 
+required careful preprocessing and parameter tuning. 
+ 
+6.4 Decision Tree Classifier Performance 
+The Decision Tree Classifier showed the best overall performance among the three models. 
+Observations: 
+• Achieved the highest accuracy and F1-score 
+• Effectively captured non-linear relationships 
+• Clearly identified important decision rules 
+Strengths: 
+• Handles both numerical and categorical features well 
+
+=== PAGE 19 ===
+• Requires minimal data scaling 
+• Highly interpretable through tree structure 
+Limitations: 
+• Prone to overfitting if not properly controlled 
+• Performance depends on tree depth and pruning 
+The Decision Tree model successfully identified key factors such as PageValues, 
+BounceRates, and ProductRelated duration as major contributors to purchasing intent. 
+6.5 Comparative Performance Summary 
+ 
+ 
+6.6 Key Insights from Model Comparison 
+• Logistic Regression provided a strong baseline but struggled with complex patterns 
+• KNN benefited from feature scaling and performed well in recall 
+• Decision Tree consistently outperformed other models across all metrics 
+• Tree-based learning proved more effective for behavioral and engagement data 
+6.7 Final Interpretation 
+The comparison demonstrates that model selection significantly impacts prediction 
+accuracy in e-commerce analytics. While simpler models offer interpretability and speed, 
+advanced models such as Decision Trees provide superior performance by capturing non-
+linear interactions in user behavior data. 
+This comparative analysis justified the selection of the Decision Tree Classifier as the most 
+suitable model for predicting online shoppers’ purchasing intention. 
+ 
+ 
+ 
+ 
+ 
+   Model       Accuracy  Precision   Recall F1-Score 
+Logistic Regression     Moderate Good Moderate Balanced 
+KNN High Moderate High Good 
+Decision Tree Very High High High Excellent 
+
+=== PAGE 20 ===
+7. Best Model Identification 
+After developing and evaluating multiple predictive models for online shoppers’ purchasing 
+intention, it is essential to identify the most suitable model based on performance, 
+interpretability, and practical usability. In this study, Logistic Regression, K-Nearest 
+Neighbors (KNN), and Decision Tree Classifier were trained and tested on the same dataset 
+using a consistent train–test split. Their performances were compared using standard 
+evaluation metrics such as accuracy, precision, recall, and F1-score. 
+ 
+7.1 Evaluation Criteria 
+The best model was identified using the following criteria: 
+• Prediction Accuracy: Ability to correctly classify revenue-generating and non-
+revenue sessions 
+• Recall: Effectiveness in identifying actual purchasing sessions 
+• Precision: Reliability of positive purchase predictions 
+• F1-Score: Balance between precision and recall 
+• Model Interpretability: Ease of understanding model decisions 
+• Business Applicability: Practical usefulness for e-commerce decision-making 
+These criteria ensure that the selected model is not only statistically strong but also 
+meaningful from a business perspective. 
+ 
+7.2 Performance Summary of Models 
+• Logistic Regression provided stable and interpretable results but struggled to capture 
+complex non-linear patterns present in user behavior data. Its linear nature limited its 
+ability to model intricate interactions among features such as page duration, bounce 
+rates, and visitor type. 
+• K-Nearest Neighbors (KNN) demonstrated improved recall compared to Logistic 
+Regression, especially for identifying purchasing sessions. However, its performance 
+was highly sensitive to feature scaling and the choice of the value of k. Additionally, 
+KNN requires higher computational resources during prediction, making it less 
+suitable for large-scale real-time applications. 
+• Decision Tree Classifier outperformed the other models across most evaluation 
+metrics. It effectively captured non-linear relationships and complex decision 
+boundaries within the dataset. The model showed higher accuracy, balanced precision 
+and recall, and strong F1-score values, indicating robust predictive capability. 
+
+=== PAGE 21 ===
+ 
+7.3 Selection of the Best Model 
+Based on the comparative evaluation, the Decision Tree Classifier was identified as the best-
+performing model for predicting online shoppers’ purchasing intention. 
+Key reasons for selecting the Decision Tree model include: 
+• Superior Predictive Performance: It achieved the highest overall accuracy and F1-
+score among all models. 
+• Non-Linear Relationship Handling: The model effectively captured interactions 
+between behavioral variables such as ProductRelated_Duration, PageValues, and 
+BounceRates. 
+• Interpretability: Decision trees provide clear decision rules that can be easily 
+visualized and understood by non-technical stakeholders. 
+• Business Insight Generation: The tree structure helps identify critical factors 
+influencing purchasing decisions, enabling actionable insights for marketing and 
+website optimization. 
+• Minimal Preprocessing Dependency: Unlike KNN, Decision Trees are less affected 
+by feature scaling, making them more robust in practical scenarios. 
+ 
+7.4 Practical Implications 
+From a business and deployment perspective, the Decision Tree model is highly suitable for 
+e-commerce platforms. It allows organizations to: 
+• Identify high-intent users in real time 
+• Improve personalized marketing strategies 
+• Optimize website design based on key decision factors 
+• Increase conversion rates through targeted interventions 
+The transparency of the model also supports trust and explainability, which are important for 
+managerial decision-making. 
+ 
+ 
+ 
+ 
+
+=== PAGE 22 ===
+8. Conclusion 
+The objective of this project was to analyze online shopper behavior and develop predictive 
+models capable of identifying purchasing intent based on user browsing patterns. Using the 
+Online Shoppers Purchasing Intention Dataset from the UCI Machine Learning Repository, a 
+comprehensive predictive analytics pipeline was implemented, including data preprocessing, 
+exploratory analysis, model development, model comparison, and best model identification. 
+Through detailed analysis, it was observed that user engagement metrics such as 
+ProductRelated pages, ProductRelated duration, PageValues, BounceRates, and ExitRates 
+play a crucial role in determining whether a session results in revenue generation. Returning 
+visitors showed a higher likelihood of purchase compared to new visitors, indicating the 
+importance of customer retention strategies in e-commerce platforms. Temporal factors such 
+as special days and seasonal trends also influenced purchasing behavior, highlighting the 
+relevance of time-based marketing campaigns.The dataset preprocessing phase ensured data 
+quality and model readiness by handling categorical variables, encoding Boolean features, 
+applying feature scaling, and separating dependent and independent variables. This step was 
+essential in improving model performance and ensuring fair comparison across different 
+machine learning algorithms. 
+Three predictive models—Logistic Regression, K-Nearest Neighbors (KNN), and Decision 
+Tree Classifier—were developed and trained using a 70:30 train-test split. Logistic 
+Regression served as a baseline model due to its simplicity and interpretability, KNN 
+captured similarity-based patterns through distance calculations, and the Decision Tree model 
+effectively learned non-linear relationships between features and purchasing intent. 
+Model comparison revealed noticeable differences in performance across the three 
+algorithms. While Logistic Regression provided stable and interpretable results, it struggled 
+to capture complex patterns. KNN demonstrated improved recall but was sensitive to feature 
+scaling and computationally expensive for large datasets. The Decision Tree Classifier 
+outperformed the other models by achieving higher accuracy, precision, and recall, making it 
+the most suitable model for this problem.Based on performance metrics and interpretability, 
+the Decision Tree Classifier was identified as the best-performing model. Its ability to 
+handle both numerical and categorical features, capture non-linear decision boundaries, and 
+provide clear decision rules makes it highly applicable in real-world e-commerce 
+environments. The insights generated by the model can be directly used by businesses to 
+identify high-potential users and optimize conversion-focused strategies. 
+In conclusion, this project successfully demonstrated how predictive analytics and machine 
+learning can be applied to real-world e-commerce data to understand customer behavior and 
+predict purchasing intent. The findings emphasize the importance of data-driven decision-
+making in improving customer experience and business outcomes. The developed framework 
+provides a strong foundation for future enhancements and practical deployment in online 
+retail systems. 
+ 
+
+=== PAGE 23 ===
+9. Future Scope 
+While this project achieved meaningful results in predicting online shoppers’ purchasing 
+intentions, there are several opportunities for enhancement and further research that can 
+significantly improve the robustness and applicability of the solution. 
+One major area for future improvement is the use of advanced ensemble learning models 
+such as Random Forest, Gradient Boosting, XGBoost, and LightGBM. These models are 
+known to outperform single classifiers by combining multiple decision trees and reducing 
+overfitting, which could lead to higher predictive accuracy and better generalization on 
+unseen data. 
+Another important extension would be the incorporation of deep learning techniques, such 
+as Artificial Neural Networks (ANNs), to model complex interactions between features. Deep 
+learning models can automatically learn high-level representations from large datasets and 
+may further enhance prediction performance, especially when additional behavioral or 
+clickstream data is available. 
+The project can also be expanded to support real-time prediction systems. By integrating 
+the trained model into a live e-commerce platform, businesses could dynamically predict user 
+intent during active sessions and trigger personalized recommendations, discounts, or 
+notifications to increase conversion probability. 
+Feature enrichment presents another promising future direction. Additional data such as user 
+demographics, device type, session timestamps, referral sources, and historical purchase 
+behavior could be integrated to improve model accuracy and contextual understanding. 
+Moreover, advanced feature engineering techniques could uncover hidden patterns that were 
+not explored in the current study. 
+From a deployment perspective, the model could be operationalized using cloud platforms 
+such as AWS, Azure, or Google Cloud, enabling scalability and real-time inference. A 
+complete end-to-end pipeline involving data ingestion, preprocessing, prediction, and 
+visualization dashboards would significantly enhance practical usability. 
+Finally, ethical considerations and data privacy should be addressed in future work. Ensuring 
+compliance with data protection regulations and implementing responsible AI practices will 
+be essential when deploying predictive systems in real-world environments. 
+In summary, the future scope of this project is extensive and offers multiple opportunities to 
+improve accuracy, scalability, and business impact. By adopting advanced models, real-time 
+systems, and enriched data sources, the predictive framework developed in this study can be 
+transformed into a powerful decision-support tool for modern e-commerce platforms. 
+ 
+ 
+ 
+
+=== PAGE 24 ===
+10. References 
+- UCI Machine Learning Repository 
+Dua, D. and Graff, C. (2019). Online Shoppers Purchasing Intention Dataset. 
+University of California, Irvine, School of Information and Computer Sciences. 
+Available at: 
+https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset 
+- Scikit-learn: Machine Learning in Python 
+Pedregosa et al. (2011). Scikit-learn: Machine Learning in Python. 
+Journal of Machine Learning Research, 12, pp. 2825–2830. 
+Available at: 
+https://scikit-learn.org/stable/ 
+- Python Software Foundation 
+Python Language Reference, Version 3.x. 
+Available at: 
+https://www.python.org/ 
+ 
+IMPORTANT LINKS 
+1)Link to Dataset: Link for Dataset 
+2)Link to GitHub Repository: Link to GitHub 
+3)Link to LinkedIn Post: Link to LinkedIn 
+ 
+

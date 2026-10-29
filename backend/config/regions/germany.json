@@ -1,0 +1,41 @@
+{
+  "country_code": "DEU",
+  "country_name": "Germany",
+  "region": "Federal Republic of Germany",
+  "currency_code": "EUR",
+  "currency_symbol": "€",
+  "dataset_id": "de_immobilienscout24",
+  "dataset_name": "German Real Estate Classifieds (ImmoScout24)",
+  "dataset_source": "Kaggle / ImmoScout24 Open Research",
+  "reference_url": "https://www.kaggle.com/datasets/corrieaar/apartment-rental-offers-in-germany",
+  "target_column": "totalRent",
+  "target_definition": "Warm rent (Warmmiete) including utility prepayments",
+  "target_unit": "EUR (€)",
+  "scale_factor_to_currency": 1.0,
+  "feature_schema": [
+    {
+      "name": "livingSpace",
+      "label": "Living Space (sqm)",
+      "type": "float",
+      "unit": "m²",
+      "description": "Total usable living space area"
+    },
+    {
+      "name": "noRooms",
+      "label": "Number of Rooms",
+      "type": "float",
+      "unit": "Rooms",
+      "description": "Total room count including living/bedrooms"
+    },
+    {
+      "name": "regio1",
+      "label": "Federal State (Bundesland)",
+      "type": "categorical",
+      "description": "State code (e.g. Bayern, Berlin, NRW)"
+    }
+  ],
+  "model_id": "de_housing_rf",
+  "support_status": "PLANNED_FUTURE",
+  "compatibility_notes": "Requires square-meterage and European metric schema. Prediction is disabled until validated training data is registered."
+}
+
