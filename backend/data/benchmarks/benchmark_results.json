@@ -1,5 +1,67 @@
 [
   {
+    "benchmark_id": "bench_1793396008",
+    "timestamp": "2026-10-30T21:33:28Z",
+    "execution_environment": {
+      "master": "local[*]",
+      "spark_version": "3.5.3",
+      "driver_memory": "2g",
+      "configured_partitions": 8,
+      "cluster_type": "Single-Node Local[*] Simulated Cluster (INT315 Laboratory Environment)",
+      "hardware_note": "Local CPU cores simulated execution. Real multi-node cluster scaling requires physical Spark worker daemons."
+    },
+    "dataset": {
+      "name": "California Housing (StatLib)",
+      "is_synthetic": false,
+      "total_source_records": 20640
+    },
+    "runs": [
+      {
+        "fraction": 0.25,
+        "percentage_label": "25%",
+        "row_count": 5171,
+        "train_row_count": 4137,
+        "test_row_count": 1034,
+        "partition_count": 8,
+        "preprocessing_duration_s": 1.7995,
+        "training_duration_s": 1.7203,
+        "prediction_duration_s": 0.3093,
+        "total_duration_s": 3.8291,
+        "inference_throughput_rps": 3342.8,
+        "scaling_linearity": 1.0
+      },
+      {
+        "fraction": 0.5,
+        "percentage_label": "50%",
+        "row_count": 10436,
+        "train_row_count": 8399,
+        "test_row_count": 2037,
+        "partition_count": 8,
+        "preprocessing_duration_s": 0.3755,
+        "training_duration_s": 0.3274,
+        "prediction_duration_s": 0.1727,
+        "total_duration_s": 0.8756,
+        "inference_throughput_rps": 11792.0,
+        "scaling_linearity": 0.113
+      },
+      {
+        "fraction": 1.0,
+        "percentage_label": "100%",
+        "row_count": 20640,
+        "train_row_count": 16628,
+        "test_row_count": 4012,
+        "partition_count": 8,
+        "preprocessing_duration_s": 0.3157,
+        "training_duration_s": 0.2847,
+        "prediction_duration_s": 0.1484,
+        "total_duration_s": 0.7488,
+        "inference_throughput_rps": 27026.0,
+        "scaling_linearity": 0.049
+      }
+    ],
+    "total_suite_duration_s": 25.528
+  },
+  {
     "benchmark_id": "bench_1793094110",
     "timestamp": "2026-10-27T09:41:50Z",
     "execution_environment": {
