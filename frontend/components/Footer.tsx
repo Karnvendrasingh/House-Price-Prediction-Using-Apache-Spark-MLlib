@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Sparkles, ExternalLink, Github, Heart } from "lucide-react";
@@ -10,7 +10,6 @@ export const Footer: React.FC = () => {
         <div className="flex items-center space-x-2">
           <Sparkles className="w-4 h-4 text-cyan-400" />
           <span className="text-gray-300 font-bold">GlobalEstate AI</span>
-          <span>— INT315 Cluster Computing Project</span>
         </div>
 
         <div className="flex items-center space-x-6">
@@ -31,9 +30,7 @@ export const Footer: React.FC = () => {
           </a>
         </div>
 
-        <div>
-          <span>Lovely Professional University</span>
-        </div>
+        
       </div>
     </footer>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { BookOpen, Cpu, Database, Award, ShieldAlert, GitBranch, Layers, CheckCircle } from "lucide-react";
@@ -9,13 +9,13 @@ export const AboutMethodology: React.FC = () => {
       <div>
         <div className="flex items-center space-x-2 text-cyan-400 text-sm font-mono uppercase tracking-wider mb-2">
           <BookOpen className="w-4 h-4" />
-          <span>INT315 Academic Report & Viva Reference</span>
+          <span>Platform Architecture & Technical Reference</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
           System Architecture & Methodology
         </h2>
         <p className="text-gray-400 text-sm mt-1">
-          Technical specifications for course INT315: Cluster Computing project evaluation.
+          Technical specifications and design principles behind the GlobalEstate AI distributed prediction engine.
         </p>
       </div>
 
@@ -43,7 +43,7 @@ export const AboutMethodology: React.FC = () => {
         <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10">
           <h3 className="text-lg font-bold text-white mb-3 flex items-center space-x-2">
             <Award className="w-5 h-5 text-violet-400" />
-            <span>Core Project Objectives</span>
+            <span>Core Platform Objectives</span>
           </h3>
           <ul className="space-y-2 text-xs font-mono text-gray-300">
             <li className="flex items-start space-x-2">
@@ -116,7 +116,7 @@ export const AboutMethodology: React.FC = () => {
       <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10">
         <h3 className="text-lg font-bold text-white mb-3 flex items-center space-x-2">
           <ShieldAlert className="w-5 h-5 text-amber-400" />
-          <span>Scientific Limitations & Academic Guardrails</span>
+          <span>Scientific Limitations & Model Guardrails</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300 leading-relaxed">
           <div>
@@ -130,7 +130,7 @@ export const AboutMethodology: React.FC = () => {
           <div>
             <h4 className="font-semibold text-white mb-1">Single-Node vs Multi-Node Scaling</h4>
             <p className="text-xs text-gray-400">
-              In this INT315 demonstration, Spark executes in <code className="text-cyan-300">local[*]</code> mode across CPU cores.
+              In this demonstration, Spark executes in <code className="text-cyan-300">local[*]</code> mode across CPU cores.
               While this benchmarks Spark&apos;s parallel partition scheduling and Catalyst optimizations, multi-node network shuffle scaling
               requires physical distributed cluster worker daemons.
             </p>
@@ -140,12 +140,12 @@ export const AboutMethodology: React.FC = () => {
 
       {/* References */}
       <div className="glass-panel rounded-2xl p-6 border border-white/10">
-        <h4 className="text-sm font-bold text-white mb-3 font-mono">Academic References & Citations</h4>
+        <h4 className="text-sm font-bold text-white mb-3 font-mono">Technical References & Citations</h4>
         <ol className="list-decimal list-inside space-y-1.5 text-xs text-gray-400 font-mono">
           <li>Pace, R. Kelley, and Ronald Barry. &ldquo;Sparse spatial autoregressions.&rdquo; <i>Statistics &amp; Probability Letters</i> 33.3 (1997): 291-297.</li>
           <li>Zaharia, Matei, et al. &ldquo;Apache Spark: a unified engine for big data processing.&rdquo; <i>Communications of the ACM</i> 59.11 (2016): 56-65.</li>
           <li>Meng, Xiangrui, et al. &ldquo;MLlib: Machine learning in Apache Spark.&rdquo; <i>Journal of Machine Learning Research</i> 17.34 (2016): 1-7.</li>
-          <li>INT315 – Cluster Computing Curriculum, School of Computer Science &amp; Engineering, Lovely Professional University (2025–2026).</li>
+          <li></li>
         </ol>
       </div>
     </div>

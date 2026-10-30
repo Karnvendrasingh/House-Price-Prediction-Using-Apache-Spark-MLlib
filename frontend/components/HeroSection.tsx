@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Sparkles, BarChart3, Database, Cpu, ArrowRight } from "lucide-react";
@@ -20,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEstimateClick, onExp
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 mb-6">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
             <span className="text-xs font-mono font-medium tracking-wide text-cyan-300 uppercase">
-              Apache Spark MLlib • INT315 Cluster Computing
+              Apache Spark MLlib — Distributed Regression Platform
             </span>
           </div>
 

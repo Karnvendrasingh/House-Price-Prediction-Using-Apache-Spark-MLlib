@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Sparkles, Activity, Layers, Database, Cpu, Globe2, BookOpen, Menu, X } from "lucide-react";
@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, sparkAc
     { id: "explorer", label: "Dataset Explorer", icon: Database },
     { id: "scalability", label: "Scalability Lab", icon: Cpu },
     { id: "registry", label: "Registry", icon: Globe2 },
-    { id: "about", label: "About INT315", icon: BookOpen },
+    { id: "about", label: "About", icon: BookOpen },
   ];
 
   return (
@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, sparkAc
                 {sparkActive ? "Local[*] Active" : "Spark Ready"}
               </span>
             </div>
-            <span className="text-xs font-mono text-gray-400">INT315 Cluster</span>
+            <span className="text-xs font-mono text-gray-400">Edge Cluster</span>
           </div>
 
           {/* Mobile Menu Button */}
