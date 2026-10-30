@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Cpu, Play, RefreshCw, BarChart2, Layers, CheckCircle2, AlertTriangle, Clock } from "lucide-react";
@@ -229,7 +229,7 @@ export const ScalabilityLab: React.FC = () => {
                       const data = payload[0].payload;
                       return (
                         <div className="bg-[#0E1321] p-3 rounded-lg border border-violet-500/30 shadow-xl text-xs font-mono">
-                          <p className="text-white font-bold">{data.rows?.toLocaleString()} Records</p>
+                          <p className="text-white font-bold">{data.rows?.toLocaleString('en-US')} Records</p>
                           <p className="text-cyan-300 font-bold">Total Time: {data.Total?.toFixed(3)}s</p>
                         </div>
                       );
@@ -281,13 +281,13 @@ export const ScalabilityLab: React.FC = () => {
                   <tr key={idx} className="hover:bg-white/[0.02]">
                     <td className="px-4 py-3 text-gray-400">{currentBenchmark.timestamp}</td>
                     <td className="px-4 py-3 font-bold text-cyan-300">{r.percentage_label}</td>
-                    <td className="px-4 py-3 text-white font-semibold">{r.row_count.toLocaleString()}</td>
+                    <td className="px-4 py-3 text-white font-semibold">{r.row_count.toLocaleString('en-US')}</td>
                     <td className="px-4 py-3 text-gray-400">{r.partition_count}</td>
                     <td className="px-4 py-3 text-sky-400">{r.preprocessing_duration_s.toFixed(3)}s</td>
                     <td className="px-4 py-3 text-cyan-400 font-semibold">{r.training_duration_s.toFixed(3)}s</td>
                     <td className="px-4 py-3 text-violet-400">{r.prediction_duration_s.toFixed(3)}s</td>
                     <td className="px-4 py-3 font-bold text-emerald-400">{r.total_duration_s.toFixed(3)}s</td>
-                    <td className="px-4 py-3 text-gray-300">{r.inference_throughput_rps.toLocaleString()} rps</td>
+                    <td className="px-4 py-3 text-gray-300">{r.inference_throughput_rps.toLocaleString('en-US')} rps</td>
                   </tr>
                 ))
               ) : (

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Activity, RefreshCw, BarChart2, CheckCircle, Info, Cpu, Layers } from "lucide-react";
@@ -133,7 +133,7 @@ export const PerformanceDashboard: React.FC = () => {
                 {metadata.metrics.rmse?.toFixed(4)}
               </div>
               <p className="text-xs text-cyan-400 font-mono mt-1">
-                ≈ ${metadata.metrics.rmse_usd?.toLocaleString()} USD
+                ≈ ${metadata.metrics.rmse_usd?.toLocaleString('en-US')} USD
               </p>
               <p className="text-[11px] text-gray-400 mt-2">
                 Penalizes large outlier estimation errors.
@@ -146,7 +146,7 @@ export const PerformanceDashboard: React.FC = () => {
                 {metadata.metrics.mae?.toFixed(4)}
               </div>
               <p className="text-xs text-violet-400 font-mono mt-1">
-                ≈ ${metadata.metrics.mae_usd?.toLocaleString()} USD
+                ≈ ${metadata.metrics.mae_usd?.toLocaleString('en-US')} USD
               </p>
               <p className="text-[11px] text-gray-400 mt-2">
                 Average absolute distance from actual census values.
@@ -169,7 +169,7 @@ export const PerformanceDashboard: React.FC = () => {
             <div className="glass-panel p-5 rounded-2xl border border-white/10">
               <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">Partition Sample Sizes</span>
               <div className="text-xl font-bold font-mono text-white mt-1">
-                {metadata.train_test_split.train_samples?.toLocaleString()} / {metadata.train_test_split.test_samples?.toLocaleString()}
+                {metadata.train_test_split.train_samples?.toLocaleString('en-US')} / {metadata.train_test_split.test_samples?.toLocaleString('en-US')}
               </div>
               <p className="text-xs text-sky-400 font-mono mt-1">
                 Train / Test Record Split ({Math.round(metadata.train_test_split.train_ratio * 100)}/
@@ -224,8 +224,8 @@ export const PerformanceDashboard: React.FC = () => {
                           const data = payload[0].payload;
                           return (
                             <div className="bg-[#0E1321] p-3 rounded-lg border border-cyan-500/30 shadow-xl text-xs font-mono">
-                              <p className="text-gray-400">Actual: <span className="text-white font-bold">${data.actual_usd?.toLocaleString()}</span></p>
-                              <p className="text-gray-400">Predicted: <span className="text-cyan-300 font-bold">${data.predicted_usd?.toLocaleString()}</span></p>
+                              <p className="text-gray-400">Actual: <span className="text-white font-bold">${data.actual_usd?.toLocaleString('en-US')}</span></p>
+                              <p className="text-gray-400">Predicted: <span className="text-cyan-300 font-bold">${data.predicted_usd?.toLocaleString('en-US')}</span></p>
                               <p className="text-gray-400">Residual: <span className={data.residual >= 0 ? "text-emerald-400" : "text-rose-400"}>${(data.residual * 100000).toFixed(0)}</span></p>
                             </div>
                           );

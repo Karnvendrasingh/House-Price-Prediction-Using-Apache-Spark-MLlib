@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Sparkles, RefreshCw, AlertCircle, CheckCircle2, TrendingUp, Clock, Info } from "lucide-react";
@@ -151,7 +151,7 @@ export const QuickEstimator: React.FC = () => {
                     <span>Median Income (MedInc)</span>
                     <Info className="w-3 h-3 text-gray-400" />
                   </label>
-                  <span className="text-xs font-mono text-cyan-400">${(features.MedInc * 10000).toLocaleString()}/yr</span>
+                  <span className="text-xs font-mono text-cyan-400">${(features.MedInc * 10000).toLocaleString('en-US')}/yr</span>
                 </div>
                 <input
                   type="number"
@@ -219,7 +219,7 @@ export const QuickEstimator: React.FC = () => {
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <label className="text-xs font-medium text-gray-300">Block Population</label>
-                  <span className="text-xs font-mono text-emerald-400">{features.Population.toLocaleString()} Residents</span>
+                  <span className="text-xs font-mono text-emerald-400">{features.Population.toLocaleString('en-US')} Residents</span>
                 </div>
                 <input
                   type="number"

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Database, ChevronLeft, ChevronRight, ArrowUpDown, ExternalLink, RefreshCw, Info, CheckCircle2 } from "lucide-react";
@@ -85,7 +85,7 @@ export const DatasetExplorer: React.FC = () => {
               : "text-gray-400 hover:text-white"
           }`}
         >
-          Observation Browser ({totalRecords.toLocaleString()} Rows)
+          Observation Browser ({totalRecords.toLocaleString('en-US')} Rows)
         </button>
         <button
           onClick={() => setActiveSubTab("stats")}
@@ -156,12 +156,12 @@ export const DatasetExplorer: React.FC = () => {
                       <td className="px-4 py-2.5 text-gray-300">{row.HouseAge}</td>
                       <td className="px-4 py-2.5 text-gray-300">{row.AveRooms?.toFixed(2)}</td>
                       <td className="px-4 py-2.5 text-gray-300">{row.AveBedrms?.toFixed(2)}</td>
-                      <td className="px-4 py-2.5 text-gray-300">{row.Population?.toLocaleString()}</td>
+                      <td className="px-4 py-2.5 text-gray-300">{row.Population?.toLocaleString('en-US')}</td>
                       <td className="px-4 py-2.5 text-gray-300">{row.AveOccup?.toFixed(2)}</td>
                       <td className="px-4 py-2.5 text-sky-400">{row.Latitude?.toFixed(2)}°</td>
                       <td className="px-4 py-2.5 text-sky-400">{row.Longitude?.toFixed(2)}°</td>
                       <td className="px-4 py-2.5 font-bold text-violet-300">${row.MedHouseVal?.toFixed(4)}</td>
-                      <td className="px-4 py-2.5 font-bold text-emerald-400">${row.EstimatedUSD?.toLocaleString()}</td>
+                      <td className="px-4 py-2.5 font-bold text-emerald-400">${row.EstimatedUSD?.toLocaleString('en-US')}</td>
                     </tr>
                   ))
                 )}
@@ -173,7 +173,7 @@ export const DatasetExplorer: React.FC = () => {
           <div className="px-4 py-3 bg-[#0E1321] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-gray-400">
             <div>
               Showing page <span className="text-white font-bold">{page}</span> of{" "}
-              <span className="text-white font-bold">{totalPages}</span> ({totalRecords.toLocaleString()} total rows)
+              <span className="text-white font-bold">{totalPages}</span> ({totalRecords.toLocaleString('en-US')} total rows)
             </div>
             <div className="flex items-center space-x-2">
               <button
@@ -218,7 +218,7 @@ export const DatasetExplorer: React.FC = () => {
                 {Object.entries(summary.statistics).map(([feat, s]) => (
                   <tr key={feat} className="hover:bg-white/[0.02]">
                     <td className="px-4 py-3 font-bold text-white">{feat}</td>
-                    <td className="px-4 py-3 text-gray-400">{s.count.toLocaleString()}</td>
+                    <td className="px-4 py-3 text-gray-400">{s.count.toLocaleString('en-US')}</td>
                     <td className="px-4 py-3 text-cyan-300 font-semibold">{s.mean.toFixed(2)}</td>
                     <td className="px-4 py-3 text-gray-300">{s.std.toFixed(2)}</td>
                     <td className="px-4 py-3 text-gray-400">{s.min.toFixed(2)}</td>
